@@ -1,0 +1,116 @@
+/* Challis & Company site: one page. Light and dark follow the reader's system
+   setting. Same palette and type as the Widen and Puzzlement sites. */
+:root {
+  color-scheme: light dark;
+  --bg: #ffffff;
+  --band: #f3f5fa;
+  --card: #ffffff;
+  --ink: #141a2e;
+  --soft: #4f5670;
+  --faint: #8a90a6;
+  --rule: #e3e6ef;
+  --blue: #2f6fe8;
+  --blue-ink: #1f56c3;
+  --shadow: 0 2px 12px rgba(20, 26, 46, .08);
+  --shadow-up: 0 10px 28px rgba(20, 26, 46, .14);
+  --icon-shadow: 0 8px 22px rgba(20, 26, 46, .22);
+
+  /* one accent per app, taken from each app's own site */
+  --puzzlement: #580470;
+  --widen: #2f6fe8;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d1020;
+    --band: #141932;
+    --card: #1a2040;
+    --ink: #eef0f7;
+    --soft: #b4b9cc;
+    --faint: #7d839b;
+    --rule: #272e52;
+    --blue: #5b93ff;
+    --blue-ink: #8ab2ff;
+    --shadow: 0 2px 14px rgba(0, 0, 0, .35);
+    --shadow-up: 0 12px 30px rgba(0, 0, 0, .5);
+    --icon-shadow: 0 8px 22px rgba(0, 0, 0, .45);
+
+    --puzzlement: #c08ad6;
+    --widen: #5b93ff;
+  }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+main { flex: 1; }
+a { color: var(--blue-ink); }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
+
+/* ---------- Top ---------- */
+.top { padding: 72px 0 40px; }
+.mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px; border-radius: 14px;
+  background: var(--ink); color: var(--bg);
+  font-weight: 800; font-size: 1.5rem; letter-spacing: -0.04em;
+  margin-bottom: 22px;
+}
+.top h1 { font-size: 2.6rem; letter-spacing: -0.03em; line-height: 1.1; }
+.lede { font-size: 1.35rem; line-height: 1.4; font-weight: 600; margin-top: 14px; letter-spacing: -0.01em; color: var(--soft); max-width: 600px; }
+
+/* ---------- Apps ---------- */
+.apps { background: var(--band); padding: 56px 0 64px; }
+.kicker {
+  display: block; font-size: .78rem; font-weight: 700; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--faint); margin-bottom: 18px;
+}
+.list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.app {
+  display: flex; flex-direction: column; height: 100%;
+  background: var(--card); border-radius: 18px; padding: 26px;
+  box-shadow: var(--shadow); border-top: 4px solid var(--accent);
+  color: inherit; text-decoration: none;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.app:hover { transform: translateY(-2px); box-shadow: var(--shadow-up); }
+.app:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.app header { display: flex; align-items: center; gap: 16px; }
+.app img { width: 72px; height: 72px; border-radius: 17px; box-shadow: var(--icon-shadow); flex: 0 0 auto; }
+.app h2 { font-size: 1.45rem; letter-spacing: -0.02em; line-height: 1.15; }
+.app h2 small { display: block; font-size: .9rem; font-weight: 500; color: var(--faint); letter-spacing: 0; margin-top: 3px; }
+.app .tag { margin-top: 18px; font-weight: 700; color: var(--accent); }
+.app p { color: var(--soft); font-size: .97rem; margin-top: 6px; }
+.app .meta {
+  margin-top: auto; padding-top: 20px;
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px;
+  font-size: .88rem;
+}
+.app .status { color: var(--faint); }
+.app .go { font-weight: 600; color: var(--accent); white-space: nowrap; }
+.p-puzzlement { --accent: var(--puzzlement); }
+.p-puzzlement h2 { font-style: italic; }
+.p-widen { --accent: var(--widen); }
+
+/* ---------- Footer ---------- */
+footer { border-top: 1px solid var(--rule); padding: 34px 0 48px; color: var(--faint); font-size: .86rem; text-align: center; }
+footer .legal { max-width: 640px; margin: 10px auto 0; font-size: .78rem; }
+
+/* ---------- Narrow screens ---------- */
+@media (max-width: 720px) {
+  .list { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .top { padding: 48px 0 32px; }
+  .top h1 { font-size: 2.1rem; }
+  .lede { font-size: 1.15rem; }
+  .apps { padding: 40px 0 48px; }
+  .app { padding: 22px; }
+  .app img { width: 60px; height: 60px; border-radius: 14px; }
+}
