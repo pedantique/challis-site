@@ -1,11 +1,10 @@
 # Challis & Company website
 
-One static page listing the company's apps, served by GitHub Pages from `main` at
-<https://pedantique.github.io/challis-site/> (planned: <https://challis.com.au>).
+One static page listing the company's apps, served by GitHub Pages from `main` at <https://challis.com.au> (HTTPS enforced).
 
 - `index.html`: the page. One `<li>` card per app; copy one to add an app, and give it a
   `p-<name>` class with an `--accent` colour in `style.css` (light and dark).
-- `style.css`: same palette and type as `pedantique/widen-site`; light and dark follow the system.
+- `style.css`: same layout and greys as `pedantique/widen-site`; light and dark follow the system.
 - `img/puzzlement.png`, `img/widen.png`: app icons, `sips -Z 240` from each app site's `img/icon.png`.
 - Brand: navy `#2a286b` and Raleway (Google Fonts), from the company artwork in OneDrive
   `C&Co/Admin/Artwork 2.0/`.
