@@ -6,16 +6,15 @@ One static page listing the company's apps, served by GitHub Pages from `main` a
   `p-<name>` class with an `--accent` colour in `style.css` (light and dark).
 - `style.css`: same layout and greys as `pedantique/widen-site`; light and dark follow the system.
 - `img/puzzlement.png`, `img/widen.png`: app icons, `sips -Z 240` from each app site's `img/icon.png`.
-- Brand: navy `#2a286b` and Raleway (Google Fonts), from the company artwork in OneDrive
+- Brand: brand blue `#191970` (midnight blue) and Raleway (Google Fonts), from the company artwork in OneDrive
   `C&Co/Admin/Artwork 2.0/`.
 - `img/wordmark.svg`: `SVG/Logo/Footer_logo.svg` with `fill="currentColor"`, inlined in the
   `<h1>` of `index.html` so it turns light in dark mode. Re-inline it if the logo changes.
 - `img/favicon.png` (64), `img/logo-mark.png` (256), `img/apple-touch-icon.png` (180, on navy):
-  the round C-and-target mark, cropped from `Artwork 2.0/Favicon.png`.
+  the round C-and-target mark, cropped from `Artwork 2.0/Favicon.png` and recoloured
+  from the artwork's `#2a286b` to brand blue.
 
 All links are relative, so the site works both at the github.io project path and on the domain.
-
-When `widen.challis.com.au` is live, change the Widen card's `href` (and "Learn more" if wanted).
 
 <!--
 Custom domain: challis.com.au (DNS at GoDaddy)
